@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apispeedtest"
+version = "0.1.0"
+description = "Latency benchmarking CLI for LLM APIs via LangChain"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Akash Gupta" }]
+license = { text = "MIT" }
+keywords = ["latency", "LLM", "benchmark", "LangChain", "OpenAI", "Anthropic", "Gemini", "Llama", "Groq"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = [
+  "langchain>=0.2.12",
+  "langchain-core>=0.2.28",
+  "langchain-openai>=0.1.22",
+  "langchain-anthropic>=0.1.22",
+  "langchain-google-genai>=1.0.8",
+  "langchain-groq>=0.1.8",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0.1",
+  "fastmcp>=2.8.1",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Repository = "https://example.com/your-repo"
+
+[project.scripts]
+apispeedtest = "apispeedtest.cli:main"
+apispeedtest-mcp = "apispeedtest.mcp_server:main"
+
