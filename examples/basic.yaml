@@ -1,0 +1,34 @@
+prompt: |
+  Explain the significance of the Fibonacci sequence in mathematics and nature.
+runs: 2
+mode: nonstream
+models:
+  - openai:gpt-4o-mini
+  - openai:gpt-4o
+  - openai:gpt-4.1
+  - openai:gpt-4.1-mini
+  # - azure:gpt-4o-mini 
+  # - azure:gpt-4o
+  # - openai:gpt-4-turbo
+  # - openai:gpt-4
+  # - openai:gpt-3.5-turbo
+  # - openai:gpt-3.5-turbo-16k
+  - openai:o3
+  - openai:o3-mini
+  - openai:o4-mini
+  - openai:gpt-4o-2024-08-06
+  - openai:gpt-5
+  - anthropic:claude-3-7-sonnet-latest
+  - gemini:gemini-1.5-pro
+  # - llama:llama3-70b-8192
+model_overrides:
+  openai:gpt-4o-mini:
+    temperature: 0.2
+    max_tokens: 256
+  # Example Azure configuration if not using env vars:
+  # Set your Azure endpoint and API version here, or via environment variables
+  # AZURE_OPENAI_ENDPOINT, OPENAI_API_VERSION, AZURE_OPENAI_API_KEY
+  azure:gpt-4o-mini:
+    azure_endpoint: "https://YOUR-RESOURCE-NAME.openai.azure.com"
+    openai_api_version: "2024-02-01"
+    # api_key: "${AZURE_OPENAI_API_KEY}"
