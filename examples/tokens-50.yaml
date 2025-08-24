@@ -1,0 +1,50 @@
+prompt: |
+  You are testing input-length sensitivity. Answer in one short sentence only.
+  Keep the response concise to isolate the effect of input tokens on latency.
+  Context payload begins below. Do not summarize; just answer briefly.
+  --- BEGIN PAYLOAD ---
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  This sentence contributes to input token length.
+  --- END PAYLOAD ---
+runs: 2
+mode: both
+models:
+  - openai:gpt-4o-mini
+  - openai:gpt-4o
+  - openai:gpt-4.1
+  - openai:gpt-4.1-mini
+  - openai:o3-mini
+  - openai:o4-mini
+  - openai:gpt-4o-2024-08-06
+  - anthropic:claude-3-7-sonnet-latest
+model_overrides:
+  openai:gpt-4o-mini:
+    temperature: 0.2
+    max_tokens: 64
+  openai:gpt-4o:
+    temperature: 0.2
+    max_tokens: 64
+  openai:gpt-4.1:
+    temperature: 0.2
+    max_tokens: 64
+  openai:gpt-4.1-mini:
+    temperature: 0.2
+    max_tokens: 64
+  openai:o3-mini:
+    temperature: 0.2
+    max_tokens: 64
+  openai:o4-mini:
+    temperature: 0.2
+    max_tokens: 64
+  openai:gpt-4o-2024-08-06:
+    temperature: 0.2
+    max_tokens: 64
+  anthropic:claude-3-7-sonnet-latest:
+    temperature: 0.2
+    max_tokens: 64
